@@ -1,0 +1,18 @@
+.headingh{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.table{
+    display: flex;
+    list-style: none;
+    
+}
+.table li{
+    margin-left: 70px;
+    width: 70px;
+
+}
+.Product{
+    display: flex;
+    
+}

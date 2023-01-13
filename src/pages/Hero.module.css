@@ -1,0 +1,46 @@
+.Hero{
+    background-color :#F2F2F2 ;
+    width: 99.7%;
+    height: 70vh;
+    display: flex;
+    color:  #2C3337;
+
+}
+.Picture{
+    width: 34%;
+    height:70%;
+    background-image: url("../Media/Banner.png");
+    background-size: contain;
+}
+.slogan{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border:1px solid black; */
+
+}
+.sloganfirst{
+    font-size: 1.2rem;
+    font-weight:900;
+    width: 20%;
+    /* border:1px solid black; */
+
+}
+.slogansecond{
+    margin-top:20px ;
+    margin-bottom:20px ;
+    /* border:1px solid black; */
+    margin-left: 183px;
+    font-weight: 600;
+}
+.butto{
+    background-color: #2C3337;
+    border-radius: 5px;
+    color:white;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    align-self: center;
+    margin-right: 55px;
+}

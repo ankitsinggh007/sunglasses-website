@@ -1,0 +1,67 @@
+.box{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.title{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.details label{
+    font-weight: 700;
+}
+.description{
+    font-size: 1rem;
+}
+.frames{
+    display: flex;
+}
+.color{
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+}
+.color span{
+    border: 1px solid white;
+    width: 2.2vw;
+    height: 2.2vw;
+    margin-left: 20px;
+    border-radius: 50%;
+}
+.Action{
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.counter1{
+    width:20%;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 4px;
+    padding-bottom: 5px;
+    background-color: #F0F0F0;
+}
+.counter{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+.cart{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.button{
+    padding: 10px 30px;
+    color: white;
+    background-color: #2C3337;
+    border-radius: 4px;
+}
