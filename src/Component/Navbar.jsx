@@ -44,7 +44,7 @@ const {LoggedInUserData, setLoggedInUserData,createUser}=useContext(User);
      <span className={classes.logo}><img src={tbc} height="98px" width="110px"/></span>
      
 
-        <span className={classes.Name}> &nbsp;Spectack frame</span>
+        <span className={classes.Name}> &nbsp;Spectack frames</span>
      </div></Link>
      <div className={classes.items}>
      

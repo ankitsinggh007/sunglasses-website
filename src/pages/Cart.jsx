@@ -1,12 +1,14 @@
-import React,{useContext} from 'react'
+import React,{useContext, useState} from 'react'
 import { product } from '../Component/ProductList';
 import { User } from '../App';
 import { ContactlessOutlined } from '@mui/icons-material';
 import classes from "./Cart.module.css";
 import db from '../Component/Firbase';
 import {doc,updateDoc} from "firebase/firestore"
+import Swal from 'sweetalert2';
 function Cart() {
 const {LoggedInUserData, setLoggedInUserData,createUser,setMessage}=useContext(User);
+const [Address, setAddress] = useState("")
   let Array=[];
   let price=0;
     for(let i=0;i<LoggedInUserData.Cart.length;i++){
@@ -15,23 +17,59 @@ const {LoggedInUserData, setLoggedInUserData,createUser,setMessage}=useContext(U
             Array.push(a[0]);
     }
    const Purcahse=async()=>{
-    setLoggedInUserData({
-        ...LoggedInUserData,Cart:[]
-    });
-    const washingtonRef = doc(db, "User", LoggedInUserData.id);
-
-    await updateDoc(washingtonRef, {
-    Cart:[]
-    });
-    setMessage("Product purchased");
+if(Address){
+    if(LoggedInUserData.Cart.length!=0){
+        await Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `Your product has been Deliverd to ${Address}`,
+            showConfirmButton: true,
+          })
+        
+        setLoggedInUserData({
+            ...LoggedInUserData,Cart:[]
+        });
+        const washingtonRef = doc(db, "User", LoggedInUserData.id);
+    
+        await updateDoc(washingtonRef, {
+        Cart:[]
+        });
+        setLoggedInUserData({...LoggedInUserData,Cart:[]})
+    }
+    else{
+        await Swal.fire({
+            position: 'center',
+            icon: 'info',
+            title: `Add product to your Cart`,
+            showConfirmButton: true,
+          })
+    }
+}
+else{
+    await Swal.fire({
+        position: 'center',
+        icon: 'info',
+        title: `Please Provide address`,
+        showConfirmButton: true,
+      })
+}
+    
+    
 
 
    }
 
     return (
     <div className={classes.box}>
-        <span className={classes.headingh}>Will buy:</span>
+          <span style={{marginTop:"50px",marginLeft:"10px"}}><label>Address:</label><br/><textarea 
+          onChange={(e)=>setAddress(e.target.value)}
+          style={{height:"30px",width:"200px",borderRadius:"5px",marginLeft:"10px"}} type="text" placeholder="Address"
+    
+    >{Address}</textarea></span>
+<br/>
+        <span className={classes.headingh}>Cart</span>
 <div>
+  
             <ul className={classes.table}>
                 <li style={{marginRight:"200px",fontWeight:"600",width:"250px"}}>Product</li>
                 <li style={{fontWeight:"600"}}>Quantity</li>

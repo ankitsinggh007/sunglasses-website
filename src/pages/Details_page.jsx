@@ -1,15 +1,16 @@
 import React from 'react'
 import { useState,useContext } from 'react';
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Button } from 'reactstrap';
 import { product } from '../Component/ProductList';
 import classes from "./Details_page.module.css"
 import { User } from '../App';
 import db from '../Component/Firbase';
+import Swal from 'sweetalert2';
 import {doc,updateDoc} from "firebase/firestore"
 function Details_page() {
 const {LoggedInUserData, setLoggedInUserData,createUser,Message,setMessage}=useContext(User);
-
+const Navigate=useNavigate();
     const {id}=useParams();
     const Array=product.filter((obj)=>obj.id==id);
     const AddToCart=async(e)=>{
@@ -26,8 +27,13 @@ const {LoggedInUserData, setLoggedInUserData,createUser,Message,setMessage}=useC
                 setMessage("Added To You Cart")
             }
             else{
-                setMessage("Logged in to add in cart")
-                
+    await Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'Please login to continue',
+                    showConfirmButton: true,
+                  })                
+                  Navigate("/signup");
                 
             }
     }

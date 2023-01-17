@@ -12,7 +12,7 @@ function Hero() {
          FOR EVERYONE</span>
         <span className={classes.slogansecond}>Explore our new collection for this summer.
 </span>
-<NavLink to="/categories/men" className={classes.butto}  variant="contained">Explore <ArrowRightAltIcon style={{position:"absolute",}}/></NavLink>
+<NavLink to="/categories/men" className={classes.butto}  variant="contained">Explore <ArrowRightAltIcon style={{marginTop:"2px"}}/></NavLink>
         </div>
         <div className={classes.Picture}>
 
