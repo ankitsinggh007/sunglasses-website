@@ -12,7 +12,13 @@ import tbc from "../Media/TBC.png"
 import { Link } from 'react-router-dom';
 import { pink } from '@mui/material/colors';
 import { display } from '@mui/system';
-
+import {FcBusinessman} from "react-icons/fc"
+import {FcBusinesswoman} from "react-icons/fc"
+import {FaChild} from "react-icons/fa"
+import man from "../Media/man.png"
+import woman from "../Media/woman.png"
+import children from "../Media/children.png"
+import login from "../Media/login.png"
 
 function Navbar() {
 const {LoggedInUserData, setLoggedInUserData,createUser}=useContext(User);
@@ -41,24 +47,24 @@ const {LoggedInUserData, setLoggedInUserData,createUser}=useContext(User);
   return (
     <div className={classes.container}>
      <Link to="/" style={{color:"black",textDecoration:"none"}}><div className={classes.Logo} >
-     <span className={classes.logo}><img src={tbc} height="98px" width="110px"/></span>
+     <span className={classes.logo}><img src={tbc} height="98px" className={classes.image}  width="110px"/></span>
      
 
         <span className={classes.Name}> &nbsp;Spectack frames</span>
      </div></Link>
      <div className={classes.items}>
      
-     <span className={classes}><Link to={"/categories/men"} style={{textDecoration:"none", color:"black"}}><span>Men</span></Link></span>
-     <span className={classes}><Link to={"/categories/woman"} style={{textDecoration:"none", color:"black"}}><span>Woman</span></Link></span>
-     <span className={classes}><Link to={"/categories/children"} style={{textDecoration:"none", color:"black"}}><span>Children</span></Link></span>
-     <span className={classes.cart}><Link to={"/cart"} style={{textDecoration:"none", color:"black"}}><span><AddShoppingCartIcon style={{position:"relative",top:"5px",fontSize:"2rem"}} /></span></Link></span>
+     <span className={classes}><Link to={"/categories/men"} style={{textDecoration:"none", color:"black"}}><span className={classes.man_text}>Men</span><img src={man} className={classes.man_icon}/></Link></span>
+     <span className={classes}><Link to={"/categories/woman"} style={{textDecoration:"none", color:"black"}}><span className={classes.women_text} >Woman</span><img src={woman} className={classes.women_icon}/></Link></span>
+     <span className={classes}><Link to={"/categories/children"} style={{textDecoration:"none", color:"black"}}><span className={classes.child_text}>Children</span><img src={children} className={classes.child_icon}/></Link></span>
+     <span className={classes.cart}><Link to={"/cart"} style={{textDecoration:"none", color:"black"}}><span><AddShoppingCartIcon className={classes.cart_icon}  /></span></Link></span>
      <span className={classes.Quantity}>{LoggedInUserData.Cart.length?`${LoggedInUserData.Cart.length}`:``}</span>
 
-     <div className={classes.navItem}>
+     
 {
   !LoggedInUserData.isAuthrized && 
 
-<Link to={"/signup"}><Button variant="contained" style={{backgroundColor:"#2C3337",padding:"12px",fontSize:"1rem"}}>Log In</Button></Link>
+<Link to={"/signup"}><Button variant="contained"className={classes.login_text} >Register</Button><img src={login} className={classes.login_icon}/></Link>
 }
 {
   LoggedInUserData.isAuthrized && 
@@ -78,7 +84,7 @@ const {LoggedInUserData, setLoggedInUserData,createUser}=useContext(User);
   </div>
 </div>
 }
-</div>
+
     </div>
     </div>
 

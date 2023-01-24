@@ -73,6 +73,8 @@ const verifyData=(e)=>{
 
 
   return (
+    <div className='bo'>
+
     <form className='Register' onSubmit={verifyData}>
           <div  ><img className='Logo_register' src={tbc} height="60px" width="60px"/>
           </div>
@@ -100,6 +102,8 @@ const verifyData=(e)=>{
 </div>
     
   </form>
+    </div>
+
   )
 }
 

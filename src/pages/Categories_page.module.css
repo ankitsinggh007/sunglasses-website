@@ -1,9 +1,11 @@
 .ProductList {
     height: auto;
+    width: 95%;
+    margin: auto;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    flex-grow: 3;
+align-items: center;
 }
 
 .title {
@@ -13,17 +15,11 @@
     margin-left: 30px;
 }
 
-.flex>.card {
-    flex: 1 0 50%;
-}
 
-.flex>.card:first-child {
-    flex: 0 1 100%;
-}
 
 .card {
     position: relative;
-    width: 18%;
+    width: fit-content;
     display: flex;
     transform: translateY(0);
     /* the box is in its default position */

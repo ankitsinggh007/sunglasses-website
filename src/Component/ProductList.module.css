@@ -1,5 +1,7 @@
 .ProductList{
     height: auto;
+    width: 90%;
+    margin:auto;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -11,17 +13,12 @@
     font-size: 1.2rem;
     margin-left: 30px;
 }
-.flex>.card{
-    flex: 1 0 50%;
-  }
-  
-  .flex>.card:first-child {
-    flex: 0 1 100%;
-  }
+
 .card{
     position: relative;
-    width: 18%;
+    width: fit-content;
     display: flex;
+    margin-top: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;

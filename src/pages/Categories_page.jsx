@@ -23,7 +23,6 @@ function Categories_page() {
 
 console.log(Array)
     return (
-    <div>
        <div className={classes.ProductList}>
         {
             Array. map((Obj,index)=>{
@@ -43,7 +42,6 @@ console.log(Array)
     </div>
 
 
-    </div>
   )
 }
 

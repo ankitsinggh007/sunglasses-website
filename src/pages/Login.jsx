@@ -46,6 +46,7 @@ function Login() {
   };
 
   return (
+    <div className={classes.body}>
     
     <form onSubmit={handleSubmit} className={classes.form}>
           <span className={classes.Logo} ><img className={classes.img} src={tbc} height="60px" width="60px"/></span>
@@ -93,6 +94,8 @@ function Login() {
         
           </div>
     </form>
+    </div>
+
   );
 }
 

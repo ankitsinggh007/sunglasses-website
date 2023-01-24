@@ -1,7 +1,9 @@
 .box{
-    margin: 20px;
+    margin:auto;
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
+
 }
 .details{
     display: flex;
