@@ -14,11 +14,12 @@
     
 }
 .body{
-    border: 1px solid black;
+    border: 1px solid white;
     height: 90vh;
     background-image: url("../Media/Banner2.png");
 background-position: center;
 
+background-size: cover;
 }
 .Logo{
     margin: auto;
@@ -35,6 +36,6 @@ background-position: center;
     .body{
         background-size: cover;
         background-repeat: no-repeat;
-        /* background-position: center; */
+        background-position: center;
     }
 }

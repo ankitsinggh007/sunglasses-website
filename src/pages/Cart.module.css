@@ -16,3 +16,10 @@
     display: flex;
     
 }
+.box{
+    height: 100vh;
+    background-image: url("../Media/Banner4.jpg");
+background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

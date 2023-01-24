@@ -49,6 +49,7 @@ const FetchData= async (email)=>{
     lastName:Creadential.lname,
     Gender:Creadential.Gender,
   }); 
+  alert("you are successfully registered");
   Navigate("/login")
  }
 // Create User
@@ -76,6 +77,7 @@ const verifyCredential=async()=>{
       const user = userCredential.user;
       console.log(user.email,"user");
       FetchData(user.email);
+  alert("you are successfully login");
       
       Navigate("/")
     })
